@@ -14,4 +14,10 @@ def hello_world():
     print("Hello, world!")
 """
 
-print(process_generation_to_code(gens))
+code = process_generation_to_code(gens)
+
+print(code)
+
+result = "\n".join(code)
+
+print(result)
