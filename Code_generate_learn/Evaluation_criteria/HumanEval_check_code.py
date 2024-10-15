@@ -2,6 +2,8 @@ import ast
 import textwrap
 import signal
 
+# linux 下可以使用如下代码：
+
 
 # 定义一个信号处理器，用于在超时时抛出异常
 def timeout_handler(signum, frame):
