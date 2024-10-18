@@ -19,7 +19,8 @@ kf = KFold(n_splits=5, shuffle=True, random_state=42)
 idx = 0
 
 
-file_path = "Machine_learing/Data_process/5fold/HumanEval.jsonl"
+file_path = "HumanEval.jsonl"
+file_path = os.path.join(os.path.dirname(__file__), file_path)
 data = list(map(json.loads, open(file_path)))
 
 for train_index, test_index in kf.split(data):
@@ -27,12 +28,18 @@ for train_index, test_index in kf.split(data):
         train = data[train_per_index]
         write_to_file(
             train,
-            f"Machine_learing/Data_process/5fold/Final_result_5fold/HumanEval_nine_train_{idx}.jsonl",
+            os.path.join(
+                os.path.dirname(__file__),
+                f"Final_result_5fold/HumanEval_nine_train_{idx}.jsonl",
+            ),
         )
     for test_per_index in test_index:
         test = data[test_per_index]
         write_to_file(
             test,
-            f"Machine_learing/Data_process/5fold/Final_result_5fold/HumanEval_nine_test_{idx}.jsonl",
+            os.path.join(
+                os.path.dirname(__file__),
+                f"Final_result_5fold/HumanEval_nine_test_{idx}.jsonl",
+            ),
         )
     idx += 1
