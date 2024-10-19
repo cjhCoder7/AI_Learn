@@ -1,3 +1,6 @@
+# 对大模型生成的代码进行提取
+
+
 def process_generation_to_code(gens):
     if "```python" in gens:
         gens = gens.split("```python")[1].split("```")[0]

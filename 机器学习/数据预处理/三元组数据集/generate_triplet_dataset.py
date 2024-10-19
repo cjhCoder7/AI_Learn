@@ -2,6 +2,7 @@ import random
 import tqdm
 
 
+# 锚定句子、正向句子、负向句子
 def find_samples(pos_data, neg_data, idx):
     pos_samples = []
     neg_samples = []
