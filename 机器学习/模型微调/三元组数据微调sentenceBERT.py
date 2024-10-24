@@ -27,7 +27,7 @@ def set_seed(seed):
     torch.backends.cudnn.benchmark = False
 
 
-set_seed(2)  # 初始化随机种子
+set_seed(2)
 
 
 # 从三个句子列表中创建三元组数据集
